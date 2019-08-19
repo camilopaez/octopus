@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+
 class Login extends Component {
     constructor() {
         super();
@@ -16,9 +17,9 @@ class Login extends Component {
     componentDidMount() {
         // If logged in and user navigates to Register page, should redirect them to dashboard
         if (this.props.auth.isAuthenticated) {
-          this.props.history.push("/dashboard");
+            this.props.history.push("/dashboard");
         }
-      }
+    }
     componentWillReceiveProps(nextProps) {
         if (nextProps.auth.isAuthenticated) {
             this.props.history.push("/dashboard"); // push user to dashboard when they login
@@ -50,11 +51,11 @@ class Login extends Component {
                         <Link to="/" className="btn-flat waves-effect">
                             <i className="material-icons left">keyboard_backspace</i> Back to
                             home
-            </Link>
+                        </Link>
                         <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                             <h4>
                                 <b>Login</b> below
-              </h4>
+                            </h4>
                             <p className="grey-text text-darken-1">
                                 Don't have an account? <Link to="/register">Register</Link>
                             </p>
